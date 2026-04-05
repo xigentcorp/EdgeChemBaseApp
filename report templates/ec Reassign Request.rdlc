@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="No_SalesLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>No_SalesLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>No_SalesLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Description_SalesLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Description_SalesLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Description_SalesLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Quantity_SalesLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Quantity_SalesLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Quantity_SalesLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="UnitofMeasure_SalesLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>UnitofMeasure_SalesLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>UnitofMeasure_SalesLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Type_SalesLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Type_SalesLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Type_SalesLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Code_SalesCommentLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Code_SalesCommentLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Code_SalesCommentLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Comment_SalesCommentLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Comment_SalesCommentLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Comment_SalesCommentLineCaption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="No1_SalesHeader">
+          <DataField>No1_SalesHeader</DataField>
+        </Field>
+        <Field Name="ShipmentDate_SalesHeader">
+          <DataField>ShipmentDate_SalesHeader</DataField>
+        </Field>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="CustAddr1">
+          <DataField>CustAddr1</DataField>
+        </Field>
+        <Field Name="CustAddr2">
+          <DataField>CustAddr2</DataField>
+        </Field>
+        <Field Name="CustAddr3">
+          <DataField>CustAddr3</DataField>
+        </Field>
+        <Field Name="CustAddr4">
+          <DataField>CustAddr4</DataField>
+        </Field>
+        <Field Name="CustAddr5">
+          <DataField>CustAddr5</DataField>
+        </Field>
+        <Field Name="CustAddr6">
+          <DataField>CustAddr6</DataField>
+        </Field>
+        <Field Name="CustAddr7">
+          <DataField>CustAddr7</DataField>
+        </Field>
+        <Field Name="CustAddr8">
+          <DataField>CustAddr8</DataField>
+        </Field>
+        <Field Name="ShipmentDateCaption">
+          <DataField>ShipmentDateCaption</DataField>
+        </Field>
+        <Field Name="SalesOrderNoCaption">
+          <DataField>SalesOrderNoCaption</DataField>
+        </Field>
+        <Field Name="PageNoCaption">
+          <DataField>PageNoCaption</DataField>
+        </Field>
+        <Field Name="WorkOrderCaption">
+          <DataField>WorkOrderCaption</DataField>
+        </Field>
+        <Field Name="No_SalesLine">
+          <DataField>No_SalesLine</DataField>
+        </Field>
+        <Field Name="Description_SalesLine">
+          <DataField>Description_SalesLine</DataField>
+        </Field>
+        <Field Name="Quantity_SalesLine">
+          <DataField>Quantity_SalesLine</DataField>
+        </Field>
+        <Field Name="Quantity_SalesLineFormat">
+          <DataField>Quantity_SalesLineFormat</DataField>
+        </Field>
+        <Field Name="UnitofMeasure_SalesLine">
+          <DataField>UnitofMeasure_SalesLine</DataField>
+        </Field>
+        <Field Name="Type_SalesLine">
+          <DataField>Type_SalesLine</DataField>
+        </Field>
+        <Field Name="QtyworkPostSalesOrderCptn">
+          <DataField>QtyworkPostSalesOrderCptn</DataField>
+        </Field>
+        <Field Name="QuantityUsedCaption">
+          <DataField>QuantityUsedCaption</DataField>
+        </Field>
+        <Field Name="UnitofMeasureCaption">
+          <DataField>UnitofMeasureCaption</DataField>
+        </Field>
+        <Field Name="ProductGroup">
+          <DataField>ProductGroup</DataField>
+        </Field>
+        <Field Name="QtyToShip">
+          <DataField>QtyToShip</DataField>
+        </Field>
+        <Field Name="QtyToShipFormat">
+          <DataField>QtyToShipFormat</DataField>
+        </Field>
+        <Field Name="Date_SalesCommentLine">
+          <DataField>Date_SalesCommentLine</DataField>
+        </Field>
+        <Field Name="Code_SalesCommentLine">
+          <DataField>Code_SalesCommentLine</DataField>
+        </Field>
+        <Field Name="Comment_SalesCommentLine">
+          <DataField>Comment_SalesCommentLine</DataField>
+        </Field>
+        <Field Name="CommentsCaption">
+          <DataField>CommentsCaption</DataField>
+        </Field>
+        <Field Name="SalesCommentLineDtCptn">
+          <DataField>SalesCommentLineDtCptn</DataField>
+        </Field>
+        <Field Name="NoCaption">
+          <DataField>NoCaption</DataField>
+        </Field>
+        <Field Name="DescriptionCaption">
+          <DataField>DescriptionCaption</DataField>
+        </Field>
+        <Field Name="QuantityCaption">
+          <DataField>QuantityCaption</DataField>
+        </Field>
+        <Field Name="UnitofMeasureCaptionControl33">
+          <DataField>UnitofMeasureCaptionControl33</DataField>
+        </Field>
+        <Field Name="DateCaption">
+          <DataField>DateCaption</DataField>
+        </Field>
+        <Field Name="workPostdItemorResJnlCptn">
+          <DataField>workPostdItemorResJnlCptn</DataField>
+        </Field>
+        <Field Name="TypeCaption">
+          <DataField>TypeCaption</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

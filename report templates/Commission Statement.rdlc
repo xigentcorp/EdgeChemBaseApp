@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="companyName">
+          <DataField>companyName</DataField>
+        </Field>
+        <Field Name="commFromDate">
+          <DataField>commFromDate</DataField>
+        </Field>
+        <Field Name="commToDate">
+          <DataField>commToDate</DataField>
+        </Field>
+        <Field Name="commSalesPersonCode">
+          <DataField>commSalesPersonCode</DataField>
+        </Field>
+        <Field Name="SalespersonName">
+          <DataField>SalespersonName</DataField>
+        </Field>
+        <Field Name="commCustName">
+          <DataField>commCustName</DataField>
+        </Field>
+        <Field Name="cleDocumentNo">
+          <DataField>cleDocumentNo</DataField>
+        </Field>
+        <Field Name="clePostingDate">
+          <DataField>clePostingDate</DataField>
+        </Field>
+        <Field Name="cleAmount">
+          <DataField>cleAmount</DataField>
+        </Field>
+        <Field Name="cleAmountFormat">
+          <DataField>cleAmountFormat</DataField>
+        </Field>
+        <Field Name="cleUnder60Days">
+          <DataField>cleUnder60Days</DataField>
+        </Field>
+        <Field Name="cleUnder60DaysFormat">
+          <DataField>cleUnder60DaysFormat</DataField>
+        </Field>
+        <Field Name="cleOver60Under90">
+          <DataField>cleOver60Under90</DataField>
+        </Field>
+        <Field Name="cleOver60Under90Format">
+          <DataField>cleOver60Under90Format</DataField>
+        </Field>
+        <Field Name="cleOver90">
+          <DataField>cleOver90</DataField>
+        </Field>
+        <Field Name="cleOver90Format">
+          <DataField>cleOver90Format</DataField>
+        </Field>
+        <Field Name="cleTotalPaid">
+          <DataField>cleTotalPaid</DataField>
+        </Field>
+        <Field Name="cleTotalPaidFormat">
+          <DataField>cleTotalPaidFormat</DataField>
+        </Field>
+        <Field Name="clePctUnder90Collected">
+          <DataField>clePctUnder90Collected</DataField>
+        </Field>
+        <Field Name="clePctUnder90CollectedFormat">
+          <DataField>clePctUnder90CollectedFormat</DataField>
+        </Field>
+        <Field Name="clePctOver90Collected">
+          <DataField>clePctOver90Collected</DataField>
+        </Field>
+        <Field Name="clePctOver90CollectedFormat">
+          <DataField>clePctOver90CollectedFormat</DataField>
+        </Field>
+        <Field Name="clePctTotallPaid">
+          <DataField>clePctTotallPaid</DataField>
+        </Field>
+        <Field Name="clePctTotallPaidFormat">
+          <DataField>clePctTotallPaidFormat</DataField>
+        </Field>
+        <Field Name="cleSalesLCY">
+          <DataField>cleSalesLCY</DataField>
+        </Field>
+        <Field Name="cleSalesLCYFormat">
+          <DataField>cleSalesLCYFormat</DataField>
+        </Field>
+        <Field Name="cbExceptionText">
+          <DataField>cbExceptionText</DataField>
+        </Field>
+        <Field Name="cbDocumentNo">
+          <DataField>cbDocumentNo</DataField>
+        </Field>
+        <Field Name="cbProdGroup">
+          <DataField>cbProdGroup</DataField>
+        </Field>
+        <Field Name="cbAmountExclTax">
+          <DataField>cbAmountExclTax</DataField>
+        </Field>
+        <Field Name="cbAmountExclTaxFormat">
+          <DataField>cbAmountExclTaxFormat</DataField>
+        </Field>
+        <Field Name="cbAmountSubjtoCommission">
+          <DataField>cbAmountSubjtoCommission</DataField>
+        </Field>
+        <Field Name="cbAmountSubjtoCommissionFormat">
+          <DataField>cbAmountSubjtoCommissionFormat</DataField>
+        </Field>
+        <Field Name="cbCommRate">
+          <DataField>cbCommRate</DataField>
+        </Field>
+        <Field Name="cbCommRateFormat">
+          <DataField>cbCommRateFormat</DataField>
+        </Field>
+        <Field Name="cbCommissionDollars">
+          <DataField>cbCommissionDollars</DataField>
+        </Field>
+        <Field Name="cbCommissionDollarsFormat">
+          <DataField>cbCommissionDollarsFormat</DataField>
+        </Field>
+        <Field Name="rcDocumentNo">
+          <DataField>rcDocumentNo</DataField>
+        </Field>
+        <Field Name="rcAmount">
+          <DataField>rcAmount</DataField>
+        </Field>
+        <Field Name="rcAmountFormat">
+          <DataField>rcAmountFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="FORMAT_TODAY_0_4_">
+          <DataField>FORMAT_TODAY_0_4_</DataField>
+        </Field>
+        <Field Name="TIME">
+          <DataField>TIME</DataField>
+        </Field>
+        <Field Name="CompanyInformation_Name">
+          <DataField>CompanyInformation_Name</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENO">
+          <DataField>CurrReport_PAGENO</DataField>
+        </Field>
+        <Field Name="USERID">
+          <DataField>USERID</DataField>
+        </Field>
+        <Field Name="PeriodText">
+          <DataField>PeriodText</DataField>
+        </Field>
+        <Field Name="CodeFilter">
+          <DataField>CodeFilter</DataField>
+        </Field>
+        <Field Name="FilterString">
+          <DataField>FilterString</DataField>
+        </Field>
+        <Field Name="Salesperson_Purchaser_Code">
+          <DataField>Salesperson_Purchaser_Code</DataField>
+        </Field>
+        <Field Name="Salesperson_Purchaser_Name">
+          <DataField>Salesperson_Purchaser_Name</DataField>
+        </Field>
+        <Field Name="Salesperson_Purchaser__Commission___">
+          <DataField>Salesperson_Purchaser__Commission___</DataField>
+        </Field>
+        <Field Name="Salesperson_Purchaser__Commission___Format">
+          <DataField>Salesperson_Purchaser__Commission___Format</DataField>
+        </Field>
+        <Field Name="PageGroupNo">
+          <DataField>PageGroupNo</DataField>
+        </Field>
+        <Field Name="OnlyOnePerPage">
+          <DataField>OnlyOnePerPage</DataField>
+        </Field>
+        <Field Name="Cust__Ledger_Entry___Sales__LCY__">
+          <DataField>Cust__Ledger_Entry___Sales__LCY__</DataField>
+        </Field>
+        <Field Name="Cust__Ledger_Entry___Sales__LCY__Format">
+          <DataField>Cust__Ledger_Entry___Sales__LCY__Format</DataField>
+        </Field>
+        <Field Name="Cust__Ledger_Entry___Profit__LCY__">
+          <DataField>Cust__Ledger_Entry___Profit__LCY__</DataField>
+        </Field>
+        <Field Name="Cust__Ledger_Entry___Profit__LCY__Format">
+          <DataField>Cust__Ledger_Entry___Profit__LCY__Format</DataField>
+        </Field>
+        <Field Name="SalesCommission">
+          <DataField>SalesCommission</DataField>
+        </Field>
+        <Field Name="SalesCommissionFormat">
+          <DataField>SalesCommissionFormat</DataField>
+        </Field>
+        <Field Name="ProfitCommission">
+          <DataField>ProfitCommission</DataField>
+        </Field>
+        <Field Name="ProfitCommissionFormat">
+          <DataField>ProfitCommissionFormat</DataField>
+        </Field>
+        <Field Name="Salesperson_Purchaser_Date_Filter">
+          <DataField>Salesperson_Purchaser_Date_Filter</DataField>
+        </Field>
+        <Field Name="Salesperson_CommissionsCaption">
+          <DataField>Salesperson_CommissionsCaption</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENOCaption">
+          <DataField>CurrReport_PAGENOCaption</DataField>
+        </Field>
+        <Field Name="For_the_period_Caption">
+          <DataField>For_the_period_Caption</DataField>
+        </Field>
+        <Field Name="Salesperson_Purchaser_CodeCaption">
+          <DataField>Salesperson_Purchaser_CodeCaption</DataField>
+        </Field>
+        <Field Name="Cust__Ledger_Entry__Document_No__Caption">
+          <DataField>Cust__Ledger_Entry__Document_No__Caption</DataField>
+        </Field>
+        <Field Name="Cust__Ledger_Entry__Posting_Date_Caption">
+          <DataField>Cust__Ledger_Entry__Posting_Date_Caption</DataField>
+        </Field>
+        <Field Name="Cust__Ledger_Entry__Customer_No__Caption">
+          <DataField>Cust__Ledger_Entry__Customer_No__Caption</DataField>
+        </Field>
+        <Field Name="Cust__Ledger_Entry__Sales__LCY__Caption">
+          <DataField>Cust__Ledger_Entry__Sales__LCY__Caption</DataField>
+        </Field>
+        <Field Name="Cust__Ledger_Entry__Profit__LCY__Caption">
+          <DataField>Cust__Ledger_Entry__Profit__LCY__Caption</DataField>
+        </Field>
+        <Field Name="SalesCommission_Control38Caption">
+          <DataField>SalesCommission_Control38Caption</DataField>
+        </Field>
+        <Field Name="ProfitCommission_Control39Caption">
+          <DataField>ProfitCommission_Control39Caption</DataField>
+        </Field>
+        <Field Name="Commission_Rate_Caption">
+          <DataField>Commission_Rate_Caption</DataField>
+        </Field>
+        <Field Name="EmptyStringCaption">
+          <DataField>EmptyStringCaption</DataField>
+        </Field>
+        <Field Name="Report_TotalCaption">
+          <DataField>Report_TotalCaption</DataField>
+        </Field>
+        <Field Name="Cust__Ledger_Entry__Posting_Date_">
+          <DataField>Cust__Ledger_Entry__Posting_Date_</DataField>
+        </Field>
+        <Field Name="Cust__Ledger_Entry__Document_No__">
+          <DataField>Cust__Ledger_Entry__Document_No__</DataField>
+        </Field>
+        <Field Name="Cust__Ledger_Entry__Customer_No__">
+          <DataField>Cust__Ledger_Entry__Customer_No__</DataField>
+        </Field>
+        <Field Name="Cust__Ledger_Entry__Sales__LCY__">
+          <DataField>Cust__Ledger_Entry__Sales__LCY__</DataField>
+        </Field>
+        <Field Name="Cust__Ledger_Entry__Sales__LCY__Format">
+          <DataField>Cust__Ledger_Entry__Sales__LCY__Format</DataField>
+        </Field>
+        <Field Name="Cust__Ledger_Entry__Profit__LCY__">
+          <DataField>Cust__Ledger_Entry__Profit__LCY__</DataField>
+        </Field>
+        <Field Name="Cust__Ledger_Entry__Profit__LCY__Format">
+          <DataField>Cust__Ledger_Entry__Profit__LCY__Format</DataField>
+        </Field>
+        <Field Name="SalesCommission_Control38">
+          <DataField>SalesCommission_Control38</DataField>
+        </Field>
+        <Field Name="SalesCommission_Control38Format">
+          <DataField>SalesCommission_Control38Format</DataField>
+        </Field>
+        <Field Name="ProfitCommission_Control39">
+          <DataField>ProfitCommission_Control39</DataField>
+        </Field>
+        <Field Name="ProfitCommission_Control39Format">
+          <DataField>ProfitCommission_Control39Format</DataField>
+        </Field>
+        <Field Name="Salesperson_Purchaser__Code">
+          <DataField>Salesperson_Purchaser__Code</DataField>
+        </Field>
+        <Field Name="Cust__Ledger_Entry__Sales__LCY___Control41">
+          <DataField>Cust__Ledger_Entry__Sales__LCY___Control41</DataField>
+        </Field>
+        <Field Name="Cust__Ledger_Entry__Sales__LCY___Control41Format">
+          <DataField>Cust__Ledger_Entry__Sales__LCY___Control41Format</DataField>
+        </Field>
+        <Field Name="Cust__Ledger_Entry__Profit__LCY___Control42">
+          <DataField>Cust__Ledger_Entry__Profit__LCY___Control42</DataField>
+        </Field>
+        <Field Name="Cust__Ledger_Entry__Profit__LCY___Control42Format">
+          <DataField>Cust__Ledger_Entry__Profit__LCY___Control42Format</DataField>
+        </Field>
+        <Field Name="SalesCommission_Control43">
+          <DataField>SalesCommission_Control43</DataField>
+        </Field>
+        <Field Name="SalesCommission_Control43Format">
+          <DataField>SalesCommission_Control43Format</DataField>
+        </Field>
+        <Field Name="ProfitCommission_Control44">
+          <DataField>ProfitCommission_Control44</DataField>
+        </Field>
+        <Field Name="ProfitCommission_Control44Format">
+          <DataField>ProfitCommission_Control44Format</DataField>
+        </Field>
+        <Field Name="Cust__Ledger_Entry_Entry_No_">
+          <DataField>Cust__Ledger_Entry_Entry_No_</DataField>
+        </Field>
+        <Field Name="Cust__Ledger_Entry_Salesperson_Code">
+          <DataField>Cust__Ledger_Entry_Salesperson_Code</DataField>
+        </Field>
+        <Field Name="Salesperson_Total_Caption">
+          <DataField>Salesperson_Total_Caption</DataField>
+        </Field>
+        <Field Name="Amount">
+          <DataField>Amount</DataField>
+        </Field>
+        <Field Name="AmountFormat">
+          <DataField>AmountFormat</DataField>
+        </Field>
+        <Field Name="CustomeName">
+          <DataField>CustomeName</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
